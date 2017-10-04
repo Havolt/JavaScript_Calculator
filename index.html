@@ -44,11 +44,12 @@
       height: 360px;
       margin: 24px auto;
       border: 2px solid black;
+      background-color: #30353d;
     }
 
     .keyButton{
       width: 80px;
-      height: 80px;
+      height: 90px;
       background-color: #75aaff;
       font-size: 2em;
     }
@@ -93,12 +94,46 @@
         if(i == 10){
           keyButton.innerHTML = 0;
           keyButton.name = '0';
+          var keyButton2 = document.createElement('button');
+          keyButton2.className = "keyButton";
+          keyButton2.innerHTML= '*';
+          keyButton2.name = 'multiply';
+          keypad.appendChild(keyButton2);
         }else{
           keyButton.innerHTML= i;
           keyButton.name = i;
+          if(i == 4){
+            var keyButton2 = document.createElement('button');
+            keyButton2.className = "keyButton";
+            keyButton2.innerHTML= '+';
+            keyButton2.name = 'plus';
+            keypad.appendChild(keyButton2);
+          }
+          if(i == 7){
+            var keyButton2 = document.createElement('button');
+            keyButton2.className = "keyButton";
+            keyButton2.innerHTML= '-';
+            keyButton2.name = 'minus';
+            keypad.appendChild(keyButton2);
+          }
         }
         keypad.appendChild(keyButton);
       }
+      var keyButton3 = document.createElement('button');
+      keyButton3.className = "keyButton";
+      keyButton3.innerHTML= 'C';
+      keyButton3.name = 'clear';
+      keypad.appendChild(keyButton3);
+      var keyButton4 = document.createElement('button');
+      keyButton4.className = "keyButton";
+      keyButton4.innerHTML= '=';
+      keyButton4.name = 'equals';
+      keypad.appendChild(keyButton4);
+      var keyButton5 = document.createElement('button');
+      keyButton5.className = "keyButton";
+      keyButton5.innerHTML= '/';
+      keyButton5.name = 'divide';
+      keypad.appendChild(keyButton5);
     }
 
     makeButtons();
