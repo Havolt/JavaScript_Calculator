@@ -17,12 +17,40 @@
       margin: 0 auto;
     }
 
+    .disp{
+      background-color: #FFE;
+      width: 320px;
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+    }
+
+    #dispPrev{
+      border-top: 1px solid black;
+      border-bottom: none;
+      height: 30px;
+      margin: 16px auto 0px auto;
+
+    }
+
+    #dispMain{
+      height: 60px;
+      display: block;
+      border-top: none;
+      margin: 0px auto 10px auto;
+      border-bottom: 1px solid black;
+    }
+
 
     </style>
   </head>
   <body>
 
     <div id="app">
+
+      <div id="dispPrev" class="disp">
+
+      </div>
+      <input id="dispMain" type="text" name="dispMain" class="disp">
 
     </div>
 
@@ -32,6 +60,7 @@
 
     //Variables and Holders
     const app = document.getElementById('app');
+
 
 
 
