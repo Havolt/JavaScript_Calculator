@@ -28,8 +28,7 @@
       border-top: 1px solid black;
       border-bottom: none;
       height: 30px;
-      margin: 16px auto 0px auto;
-
+      margin: 24px auto 0px auto;
     }
 
     #dispMain{
@@ -40,6 +39,27 @@
       border-bottom: 1px solid black;
     }
 
+    #keypad{
+      width: 320px;
+      height: 360px;
+      margin: 24px auto;
+      border: 2px solid black;
+    }
+
+    .keyButton{
+      width: 80px;
+      height: 80px;
+      background-color: #75aaff;
+      font-size: 2em;
+    }
+
+    .keyButton:hover{
+      background-color: #1670ff;
+      cursor: pointer;
+      color: #ffe;
+    }
+
+
 
     </style>
   </head>
@@ -47,10 +67,12 @@
 
     <div id="app">
 
-      <div id="dispPrev" class="disp">
+      <div id="dispPrev" class="disp"></div>
+      <input id="dispMain" type="text" name="dispMain" class="disp">
+
+      <div id="keypad">
 
       </div>
-      <input id="dispMain" type="text" name="dispMain" class="disp">
 
     </div>
 
@@ -60,6 +82,26 @@
 
     //Variables and Holders
     const app = document.getElementById('app');
+    const dispMain = document.getElementById('dispMain');
+    const dispPrev = document.getElementById('dispPrev');
+    const keypad = document.getElementById('keypad');
+
+    function makeButtons(){
+      for(var i = 1; i < 11; i++){
+        var keyButton = document.createElement('button');
+        keyButton.className = "keyButton";
+        if(i == 10){
+          keyButton.innerHTML = 0;
+          keyButton.name = '0';
+        }else{
+          keyButton.innerHTML= i;
+          keyButton.name = i;
+        }
+        keypad.appendChild(keyButton);
+      }
+    }
+
+    makeButtons();
 
 
 
