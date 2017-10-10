@@ -2,143 +2,17 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>JavaScript Calculator</title>
+    <title>Calculator</title>
     <style>
-
-    body, html{
-      background-color: #f7f7f7;
-    }
-
-    #app{
-      width: 400px;
-      height: 550px;
-      border: 2px solid black;
-      border-radius: 5%;
-      margin: 0 auto;
-    }
-
-    .disp{
-      background-color: #FFE;
-      width: 320px;
-      border-left: 1px solid black;
-      border-right: 1px solid black;
-    }
-
-    #dispPrev{
-      border-top: 1px solid black;
-      border-bottom: none;
-      height: 30px;
-      margin: 24px auto 0px auto;
-    }
-
-    #dispMain{
-      height: 60px;
-      display: block;
-      border-top: none;
-      margin: 0px auto 10px auto;
-      border-bottom: 1px solid black;
-    }
-
-    #keypad{
-      width: 320px;
-      height: 360px;
-      margin: 24px auto;
-      border: 2px solid black;
-      background-color: #30353d;
-    }
-
-    .keyButton{
-      width: 80px;
-      height: 90px;
-      background-color: #75aaff;
-      font-size: 2em;
-    }
-
-    .keyButton:hover{
-      background-color: #1670ff;
-      cursor: pointer;
-      color: #ffe;
-    }
-
-
 
     </style>
   </head>
   <body>
 
-    <div id="app">
 
-      <div id="dispPrev" class="disp"></div>
-      <input id="dispMain" type="text" name="dispMain" class="disp">
-
-      <div id="keypad">
-
-      </div>
-
-    </div>
-
-
+    <div id="app"></div>
 
     <script>
-
-    //Variables and Holders
-    const app = document.getElementById('app');
-    const dispMain = document.getElementById('dispMain');
-    const dispPrev = document.getElementById('dispPrev');
-    const keypad = document.getElementById('keypad');
-
-    function makeButtons(){
-      for(var i = 1; i < 11; i++){
-        var keyButton = document.createElement('button');
-        keyButton.className = "keyButton";
-        if(i == 10){
-          keyButton.innerHTML = 0;
-          keyButton.name = '0';
-          var keyButton2 = document.createElement('button');
-          keyButton2.className = "keyButton";
-          keyButton2.innerHTML= '*';
-          keyButton2.name = 'multiply';
-          keypad.appendChild(keyButton2);
-        }else{
-          keyButton.innerHTML= i;
-          keyButton.name = i;
-          if(i == 4){
-            var keyButton2 = document.createElement('button');
-            keyButton2.className = "keyButton";
-            keyButton2.innerHTML= '+';
-            keyButton2.name = 'plus';
-            keypad.appendChild(keyButton2);
-          }
-          if(i == 7){
-            var keyButton2 = document.createElement('button');
-            keyButton2.className = "keyButton";
-            keyButton2.innerHTML= '-';
-            keyButton2.name = 'minus';
-            keypad.appendChild(keyButton2);
-          }
-        }
-        keypad.appendChild(keyButton);
-      }
-      var keyButton3 = document.createElement('button');
-      keyButton3.className = "keyButton";
-      keyButton3.innerHTML= 'C';
-      keyButton3.name = 'clear';
-      keypad.appendChild(keyButton3);
-      var keyButton4 = document.createElement('button');
-      keyButton4.className = "keyButton";
-      keyButton4.innerHTML= '=';
-      keyButton4.name = 'equals';
-      keypad.appendChild(keyButton4);
-      var keyButton5 = document.createElement('button');
-      keyButton5.className = "keyButton";
-      keyButton5.innerHTML= '/';
-      keyButton5.name = 'divide';
-      keypad.appendChild(keyButton5);
-    }
-
-    makeButtons();
-
-
 
 
     </script>
