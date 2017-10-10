@@ -5,14 +5,56 @@
     <title>Calculator</title>
     <style>
 
+    body, html{
+      background-color: #f7f7f7;
+    }
+
+    #app{
+      width: 440px;
+      height: 600px;
+      border: 2px solid black;
+      border-radius: 2%;
+    }
+
+    #screen{
+      border: 2px solid black;
+      width: 300px;
+      height: 100px;
+      margin: 20px auto;
+    }
+
+    #prevScreen{
+      width: 300px;
+      height: 28px;
+      background-color: white;;
+    }
+
+    #mainScreen{
+      width: 300px;
+      height: 70px;
+      border: none;
+      font-size: 40px;
+      text-align: right;
+    }
+
     </style>
   </head>
   <body>
 
 
-    <div id="app"></div>
+    <div id="app">
+      <div id="screen">
+        <div id="prevScreen"></div>
+        <input type="text" id="mainScreen" name="mainScreen" value="0">
+      </div>
+      <div id="pad"></div>
+    </div>
 
     <script>
+
+    const app = document.getElementById('app');
+
+
 
 
     </script>
