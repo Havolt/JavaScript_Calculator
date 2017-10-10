@@ -37,6 +37,23 @@
       text-align: right;
     }
 
+    #pad{
+      width: 320px;
+      margin: 0 auto;
+    }
+
+    button{
+      width: 80px;
+      height: 96px;
+      font-size: 2em;
+    }
+
+    button:hover{
+      cursor: pointer;
+      background-color: lightblue;
+    }
+
+
     </style>
   </head>
   <body>
@@ -53,6 +70,66 @@
     <script>
 
     const app = document.getElementById('app');
+    const pad = document.getElementById('pad');
+
+    function makeButtons(){
+      for(var i = 1; i < 10; i++){
+        var butt = document.createElement('button');
+        butt.innerHTML=i;
+        butt.className = "numButton";
+        butt.name=i;
+        pad.appendChild(butt);
+        if(i == 3){
+          var butt2 = document.createElement('button');
+          butt2.innerHTML="+";
+          butt2.className="arithmeticButton";
+          butt2.name="plus"
+          pad.appendChild(butt2);
+        }
+        else if(i == 6){
+          var butt2 = document.createElement('button');
+          butt2.innerHTML="-";
+          butt2.className="arithmeticButton";
+          butt2.name="minus";
+          pad.appendChild(butt2);
+        }
+        else if(i == 9){
+          var butt2 = document.createElement('button');
+          butt2.innerHTML="&times;";
+          butt2.className="arithmeticButton";
+          butt2.name="multiply";
+          pad.appendChild(butt2);
+          var butt5 = document.createElement('button');
+          butt5.innerHTML="C";
+          butt5.className="clearButton";
+          butt5.name="clearer";
+          pad.appendChild(butt5);
+          var butt3 = document.createElement('button');
+          butt3.innerHTML="0";
+          butt3.className="numButton";
+          butt3.name=0;
+          pad.appendChild(butt3);
+          var butt6 = document.createElement('button');
+          butt6.innerHTML="=";
+          butt6.className="equalButton";
+          butt6.name="equals"
+          pad.appendChild(butt6);
+          var butt4 = document.createElement('button');
+          butt4.innerHTML="&divide;";
+          butt4.className="arithmeticButton";
+          butt4.name="divide";
+          pad.appendChild(butt4);
+
+        }
+        else if(i == 10){
+
+        }
+      }
+    }
+
+    makeButtons();
+
+
 
 
 
