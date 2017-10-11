@@ -69,10 +69,13 @@
 
     <script>
 
+    //Element Assignments
     const app = document.getElementById('app');
     const pad = document.getElementById('pad');
     const buttons = document.getElementsByTagName('button');
 
+
+    //Button Maker
     function makeButtons(){
       for(var i = 1; i < 10; i++){
         var butt = document.createElement('button');
@@ -127,16 +130,19 @@
         }
       }
     }
-
     makeButtons();
 
-    function logger(event){
-      console.log(event.target.name);
+    function workHorse(event){
+      if(parseInt(event.target.name) || event.target.name == 0){
+        console.log('yes');
+      }else{
+        console.log('no');
+      }
+
     }
-
-
+    //Assign Event Listener to Buttons
     for(var i = 0; i < buttons.length; i++){
-      buttons[i].addEventListener('click', logger);
+      buttons[i].addEventListener('click', workHorse);
     }
 
 
