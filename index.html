@@ -26,7 +26,8 @@
     #prevScreen{
       width: 300px;
       height: 28px;
-      background-color: white;;
+      background-color: white;
+      text-align: right;
     }
 
     #mainScreen{
@@ -74,6 +75,7 @@
     const pad = document.getElementById('pad');
     const buttons = document.getElementsByTagName('button');
     const mainScreen = document.getElementById('mainScreen');
+    const prevScreen = document.getElementById('prevScreen');
 
     //Holders and variables
     let total = 0;
@@ -152,7 +154,19 @@
           prevArr.push(currNum);
           prevArr.push('+');
           currNum = undefined;
+          combineNums = true;
+
         }
+        else{
+          prevArr.push(currNum);
+          prevArr.push('+');
+          total = parseInt(prevNum) + parseInt(currNum);
+          prevNum = total;
+          currNum = undefined;
+          mainScreen.value = total;
+          console.log(total);
+        }
+        prevScreen.innerHTML= prevArr.join(' ');
       }
       console.log('plusing');
     }
