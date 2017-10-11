@@ -73,7 +73,12 @@
     const app = document.getElementById('app');
     const pad = document.getElementById('pad');
     const buttons = document.getElementsByTagName('button');
+    const mainScreen = document.getElementById('mainScreen');
 
+    //Holders and variables
+    let total = 0;
+    let currNum;
+    let prevNum = [];
 
     //Button Maker
     function makeButtons(){
@@ -134,7 +139,13 @@
 
     function workHorse(event){
       if(parseInt(event.target.name) || event.target.name == 0){
-        console.log('yes');
+        if(currNum == undefined){
+          currNum = event.target.name;
+        }else if(currNum.length < 13){
+          currNum += event.target.name;
+        }
+        mainScreen.value = currNum;
+        console.log(currNum);
       }else{
         console.log('no');
       }
