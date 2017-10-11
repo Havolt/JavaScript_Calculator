@@ -78,7 +78,15 @@
     //Holders and variables
     let total = 0;
     let currNum;
-    let prevNum = [];
+    let prevArr = [];
+    let prevNum;
+
+    //Arithmetic Booleans
+    let addBool = false;
+    let minBool = false;
+    let mulBool = false;
+    let divBool = false;
+    let combineNums = false;
 
     //Button Maker
     function makeButtons(){
@@ -137,6 +145,18 @@
     }
     makeButtons();
 
+    function addition(){
+      if(currNum !== undefined){
+        if(combineNums == false){
+          prevNum = currNum;
+          prevArr.push(currNum);
+          prevArr.push('+');
+          currNum = undefined;
+        }
+      }
+      console.log('plusing');
+    }
+
     function workHorse(event){
       if(parseInt(event.target.name) || event.target.name == 0){
         if(currNum == undefined){
@@ -146,7 +166,10 @@
         }
         mainScreen.value = currNum;
         console.log(currNum);
-      }else{
+      }else if(event.target.name == 'plus' ){
+        addition();
+      }
+      else{
         console.log('no');
       }
 
