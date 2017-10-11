@@ -70,6 +70,14 @@
 
     <script>
 
+    /*
+
+    When arithmetic buttons are used it is calling the current symbol instead of previous one, need to fix in next
+    update of code
+
+
+    */
+
     //Element Assignments
     const app = document.getElementById('app');
     const pad = document.getElementById('pad');
@@ -171,6 +179,30 @@
       console.log('plusing');
     }
 
+    function subtraction(){
+      if(currNum !== undefined){
+        if(combineNums == false){
+          prevNum = currNum;
+          prevArr.push(currNum);
+          prevArr.push('-');
+          currNum = undefined;
+          combineNums = true;
+
+        }
+        else{
+          prevArr.push(currNum);
+          prevArr.push('-');
+          total = parseInt(prevNum) - parseInt(currNum);
+          prevNum = total;
+          currNum = undefined;
+          mainScreen.value = total;
+          console.log(total);
+        }
+        prevScreen.innerHTML= prevArr.join(' ');
+      }
+      console.log('minusing');
+    }
+
     function workHorse(event){
       if(parseInt(event.target.name) || event.target.name == 0){
         if(currNum == undefined){
@@ -182,6 +214,9 @@
         console.log(currNum);
       }else if(event.target.name == 'plus' ){
         addition();
+      }
+      else if(event.target.name == 'minus' ){
+        subtraction();
       }
       else{
         console.log('no');
