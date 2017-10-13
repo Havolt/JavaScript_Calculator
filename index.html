@@ -40,7 +40,6 @@
       text-align: right;
     }
 
-
     #pad{
       width: 320px;
       margin: 0 auto;
@@ -222,6 +221,17 @@
       combineNums = false;
     }
 
+    function equalAll(){
+      total = parseInt(prevNum) + parseInt(currNum);
+      mainScreen.value = total;
+      prevNum = total;
+      addBool = false;
+      minBool = false;
+      mulBool = false;
+      divBool = false;
+      combineNums = false;
+    }
+
     function workHorse(event){
       if(parseInt(event.target.name) || event.target.name == 0){
         if(currNum == undefined){
@@ -239,6 +249,9 @@
       }
       else if(event.target.name == 'clearer'){
         clearAll();
+      }
+      else if(event.target.name == 'equals'){
+        equalAll();
       }
 
     }
