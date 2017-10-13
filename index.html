@@ -203,6 +203,20 @@
       console.log('minusing');
     }
 
+    function clearAll(){
+      total = 0;
+      currNum = undefined;
+      prevArr = [];
+      prevNum = undefined;
+
+      //Arithmetic Booleans
+      addBool = false;
+      minBool = false;
+      mulBool = false;
+      divBool = false;
+      combineNums = false;
+    }
+
     function workHorse(event){
       if(parseInt(event.target.name) || event.target.name == 0){
         if(currNum == undefined){
@@ -218,8 +232,8 @@
       else if(event.target.name == 'minus' ){
         subtraction();
       }
-      else{
-        console.log('no');
+      else if(event.target.name == 'clearer'){
+        clearAll();
       }
 
     }
