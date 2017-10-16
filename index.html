@@ -360,6 +360,7 @@
     }
 
     function equalAll(){
+      currNum = parseInt(currNum);
       if(addBool == true){
         total = parseInt(prevNum) + parseInt(currNum);
       }
@@ -368,6 +369,9 @@
       }
       else if(mulBool == true){
         total = parseInt(prevNum) * parseInt(currNum);
+      }
+      else if(divBool == true){
+        total = parseInt(prevNum) / parseInt(currNum);
       }
       mainScreen.value = total;
       prevNum = total;
