@@ -182,6 +182,9 @@
           else if(minBool == true){
             total = parseInt(prevNum) - parseInt(currNum);
           }
+          else if(mulBool == true){
+            total = parseInt(prevNum) * parseInt(currNum);
+          }
           total = parseInt(prevNum) + parseInt(currNum);
           prevNum = total;
           currNum = undefined;
@@ -220,6 +223,9 @@
           else if(minBool == true){
             total = parseInt(prevNum) - parseInt(currNum);
           }
+          else if(mulBool == true){
+            total = parseInt(prevNum) * parseInt(currNum);
+          }
           prevNum = total;
           currNum = undefined;
           mainScreen.value = total;
@@ -232,6 +238,46 @@
         prevScreen.innerHTML= prevArr.join(' ');
       }
       console.log('minusing');
+    }
+
+    function multiplication(){
+      if(currNum !== undefined){
+        if(combineNums == false){
+          prevNum = currNum;
+          prevArr.push(currNum);
+          prevArr.push('&#215');
+          currNum = undefined;
+          combineNums = true;
+          addBool = false;
+          minBool = false;
+          mulBool = true;
+          divBool = false;
+
+        }
+        else{
+          prevArr.push(currNum);
+          prevArr.push('&#215');
+          if(addBool == true){
+            total = parseInt(prevNum) + parseInt(currNum);
+          }
+          else if(minBool == true){
+            total = parseInt(prevNum) - parseInt(currNum);
+          }
+          else if(mulBool == true){
+            total = parseInt(prevNum) * parseInt(currNum);
+          }
+          prevNum = total;
+          currNum = undefined;
+          mainScreen.value = total;
+          addBool = false;
+          minBool = false;
+          mulBool = true;
+          divBool = false;
+          console.log(total);
+        }
+        prevScreen.innerHTML= prevArr.join(' ');
+      }
+      console.log('multiplising');
     }
 
     function clearAll(){
@@ -255,6 +301,9 @@
       else if(minBool == true){
         total = parseInt(prevNum) - parseInt(currNum);
       }
+      else if(mulBool == true){
+        total = parseInt(prevNum) * parseInt(currNum);
+      }
       mainScreen.value = total;
       prevNum = total;
       addBool = false;
@@ -273,11 +322,15 @@
         }
         mainScreen.value = currNum;
         console.log(currNum);
-      }else if(event.target.name == 'plus' ){
+      }
+      else if(event.target.name == 'plus' ){
         addition();
       }
       else if(event.target.name == 'minus' ){
         subtraction();
+      }
+      else if(event.target.name == 'multiply'){
+        multiplication();
       }
       else if(event.target.name == 'clearer'){
         clearAll();
