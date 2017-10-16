@@ -160,6 +160,9 @@
     makeButtons();
 
     function addition(){
+      if(total){
+        combineNums = true;
+      }
       if(currNum !== undefined){
         if(combineNums == false){
           prevNum = currNum;
@@ -203,6 +206,9 @@
     }
 
     function subtraction(){
+      if(total){
+        combineNums = true;
+      }
       if(currNum !== undefined){
         if(combineNums == false){
           prevNum = currNum;
@@ -246,6 +252,9 @@
     }
 
     function multiplication(){
+      if(total){
+        combineNums = true;
+      }
       if(currNum !== undefined){
         if(combineNums == false){
           prevNum = currNum;
@@ -289,6 +298,9 @@
     }
 
     function division(){
+      if(total){
+        combineNums = true;
+      }
       if(currNum !== undefined){
         if(combineNums == false){
           prevNum = currNum;
@@ -336,6 +348,8 @@
       currNum = undefined;
       prevArr = [];
       prevNum = undefined;
+      mainScreen.value = total;
+      prevScreen.innerHTML = "";
 
       //Arithmetic Booleans
       addBool = false;
