@@ -6,23 +6,24 @@
     <style>
 
     body, html{
-      background-color: #f7f7f7;
+      background-color: #edeff4;
     }
 
     #app{
-      width: 440px;
-      height: 600px;
-      border: 2px solid black;
+      width: 400px;
+      height: 580px;
+      border: 2px solid #003333;
       border-radius: 2%;
       margin: 0 auto;
-      background-color: #6d0f0f;
+      background-color: #226666;
     }
 
     #screen{
-      border: 2px solid black;
+      border: 2px solid #003333;
       width: 300px;
       height: 100px;
       margin: 20px auto;
+      border-radius: 3%;
     }
 
     #prevScreen{
@@ -36,8 +37,9 @@
       width: 300px;
       height: 70px;
       border: none;
-      font-size: 40px;
+      font-size: 44px;
       text-align: right;
+      overflow-x: scroll;
     }
 
     #pad{
@@ -51,11 +53,18 @@
       font-size: 2em;
       margin-right: 2px;
       margin-bottom: 2px;
+      background-color: #AA6C39;
+      border: 1px solid #804515;
+      border-radius: 5%;
+      color: white;
+      text-shadow: 1px 1px 1px black;
     }
 
     button:hover{
       cursor: pointer;
-      background-color: lightblue;
+      background-color: #D49A6A;
+      border: 1px solid #FFD1AA;
+      text-shadow: 1px -1px 2px black;
     }
 
 
@@ -67,7 +76,7 @@
     <div id="app">
       <div id="screen">
         <div id="prevScreen"></div>
-        <input type="text" id="mainScreen" name="mainScreen" value="0">
+        <input type="text" id="mainScreen" name="mainScreen" value="0" onkeypress='return event.charCode >= 999'>
       </div>
       <div id="pad"></div>
     </div>
